@@ -1,0 +1,32 @@
+.progress_container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;  
+  position: relative;
+
+  /* Inentificadores de área */
+  border: 1px solid #fffa;
+  background-color: #ccffffaa;
+}
+
+.progress_container span.label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Inentificadores de área */
+  border: 1px solid #000a;
+  background-color: #cee
+}
+
+.progress_bar {
+  height: 100%;
+  /* Inentificadores de área */
+  border: 1px solid #000a;
+  border-radius: 15px; 
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: var(--color-primary);
+  transition: width 0.1s ease;
+}

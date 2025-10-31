@@ -1,0 +1,84 @@
+#main-menu {
+  height: 45px;
+  padding: 5px;
+  padding-left: 2px;
+  max-width: 400px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #00000055;
+  box-shadow: 0 0 4px black;
+  border-bottom-left-radius: 10px;
+}
+
+#main-menu .toggle {
+  background-color: transparent;
+  border: none;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#main-menu .toggle img{
+  width: 26px;
+  height: 26px;
+}
+
+#main-menu .options button {
+  background-color: transparent;
+  margin: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  position: relative;
+}
+
+#main-menu .options button:disabled {
+  background-color: var(--color-primary);
+  border: 1px solid var(--bg);
+}
+
+#main-menu .options button img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+#main-menu .options button img:hover {
+  cursor: pointer;
+}
+
+#main-menu .options button span {
+  padding: 5px;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  color: transparent;
+  position: absolute;
+  top: calc(100%);
+  right: 100%;
+  opacity: 0;
+}
+
+#main-menu .options button:hover span.show {
+  background-color: #241e1e;
+  width: auto;
+  height: auto;
+  color: #ccffff;
+  white-space: nowrap;
+  text-transform: capitalize;
+  right: 0;
+  opacity: 1;
+  transition: all ease-in 0.3s;
+}
+
+#main-menu .options button:disabled:hover span.show {
+  background-color: transparent;
+  color: transparent;
+}

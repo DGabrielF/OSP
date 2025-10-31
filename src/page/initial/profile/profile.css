@@ -1,0 +1,53 @@
+.personal {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+}
+
+.personal .avatar {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: #00000055;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 4px black;
+  border-radius: 100%;
+}
+
+.personal .personal-area{
+  width: var(--screen-width-base);
+  height: 360px;
+  background-color: #00000055;
+  background-color: #ff0000;
+  overflow: hidden;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.personal .personal-area .side-menu{
+  width: 200px;
+  height: 100%;
+  background-color: #00000055;
+}
+
+.personal .personal-area .side-menu button{
+  width: 95%;
+  margin-top: 5px;
+  color: var(--color-primary);
+  border: none;
+
+  background-color: #00000055;
+}
+
+.personal .personal-area .content{
+  width: 330px;
+  height: 100%;
+  background-color: #00000022;
+}
+

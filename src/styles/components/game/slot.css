@@ -1,0 +1,28 @@
+.slot {
+  width: var(--slot-size);
+  height: var(--slot-size);
+  margin: 2px;
+  border: 1px solid black;
+  background-color: #241e1e;
+  cursor: pointer;
+  position: relative;
+}
+
+.slot img{
+  width: calc(var(--slot-size) - 2px);
+  height: calc(var(--slot-size) - 2px);
+}
+
+.slot span {
+  padding: 5px;
+  background-color: transparent;
+  color: transparent;
+  position: fixed;
+  z-index: 5;
+}
+
+.slot:hover span {
+  background-color: #241e1e;
+  color: #ccffff;
+  white-space: nowrap;
+}

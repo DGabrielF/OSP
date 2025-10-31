@@ -1,0 +1,56 @@
+#quizz-form h1 {
+  text-transform: uppercase;
+  padding: 30px 0 15px 0;
+}
+
+#quizz-form .question-statement {
+  padding: 15px;
+}
+
+#quizz-form .answer-area {
+  padding: 5px;
+  gap: 5px;
+  width: 100%;
+}
+
+#quizz-form .answer-area button {
+  padding: 5px;
+  width: 95%;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#quizz-form .answer-area button.selected {
+  padding: 5px;
+  width: 95%;
+  outline: 2px solid black;
+  text-align: center;
+  border-radius: 15px;
+  transition: all ease-in-out 0.2s;
+}
+
+#quizz-form .answer-area button.selected.wrong {
+  border: 1px solid red;
+  outline: 2px solid red;
+}
+
+#quizz-form .answer-area button.selected.correct {
+  border: 1px solid green;
+  outline: 2px solid green;
+}
+
+#quizz-form .answer-area button.selected.correct {
+  border: 1px solid green;
+  outline: 2px solid green;
+}
+
+#quizz-form .button-area {
+  padding: 15px;
+  gap: 5px;
+}
+
+#quizz-form .button-area button {
+  padding: 10px 20px;
+  border-radius: 50px;
+}

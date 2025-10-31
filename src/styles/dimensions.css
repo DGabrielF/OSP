@@ -1,0 +1,6 @@
+:root {
+  --screen-width-base: 640px;
+  --screen-height-base: 360px;
+
+  --slot-size: 32px;
+}

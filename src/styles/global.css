@@ -1,0 +1,64 @@
+@import url("../page/quiz/Form.css");
+
+@import url("../page/initial/menu/menu.css");
+@import url("../page/initial/profile/profile.css");
+@import url("../page/initial/hotkeys/hotkeys.css");
+@import url("../page/initial/skillSets/skillSets.css");
+@import url("../page/initial/initial.css");
+
+
+@import url("../page/equipments/equipment.css");
+@import url("../page/attributes/attributes.css");
+
+/* classes */
+@import url("./colors.css");
+@import url("./dimensions.css");
+
+@import url("./components/flex-col.css");
+@import url("./components/flex-row.css");
+
+/* game components */
+@import url("./components/game/slot.css");
+@import url("../components/ProgressBar/Progress.Bar.css");
+
+/* webkit */
+@import url("./components/scrollbar.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  user-select: none;
+}
+
+#game-display {
+  background-color: white;
+  position: relative;
+}
+
+.float {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  background-color: var(--last-bg);
+  color: var(--color-primary);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

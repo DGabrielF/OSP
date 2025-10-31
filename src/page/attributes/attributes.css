@@ -1,0 +1,84 @@
+#attributes {
+  position: relative;
+  padding: 40px;
+  align-items: flex-start;
+  background-color: black;
+}
+
+#attributes .side-menu {
+  background-color: transparent;
+  width: 25%;
+}
+
+#attributes .side-menu div {
+  padding-left: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+#attributes .side-menu div.selected {
+  background-color: var(--color-primary);
+  color: var(--bg);
+}
+
+#attributes .attribute-content {
+  background-color: transparent;
+  width: 75%;
+  height: 100%;
+  overflow-y: auto;
+  justify-content: flex-start;
+}
+
+#attributes .attribute-content > div {
+  width: 95%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+#attributes .attribute-content > div img {
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#attributes .attribute-content .progress_container {
+  width: 100%;
+  height: 15px;
+  margin-top: 5px;
+  position: relative;
+}
+#attributes .attribute-content .progress_container span {
+  padding: 5px;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  color: transparent;
+  bottom: calc(100%);
+  right: 100%;
+  opacity: 0;
+}
+#attributes .attribute-content .progress_container:hover span {
+  padding: 5px;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  
+  top: 0;
+  right: 100%;
+  opacity: 0;
+}
+#attributes .attribute-content .progress_container:hover span.show {
+  width: auto;
+  height: auto;
+  color: #000;
+  border: none;
+  white-space: nowrap;
+  text-transform: capitalize;
+  top: 0;
+  right: 100%;
+  opacity: 1;
+  transition: all ease-in 0.3s;
+}
