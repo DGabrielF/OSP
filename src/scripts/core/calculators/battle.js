@@ -1,6 +1,4 @@
 export const battle = {
-  useSkill: () => {},
-  skillCost: () => {},
   criticalChance: () => {},
   applyStatusEffect: () => {},
   counterChance: () => {},
@@ -10,8 +8,4 @@ export const battle = {
   blockChance: () => {},
   blockedDamage: () => {},
   deathCheck: () => {}
-}
-
-battle.useSkill = (player, skillId) => {
-  
 }

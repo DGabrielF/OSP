@@ -1,0 +1,11 @@
+#map {
+  position: absolute;
+  width: 3000px;
+  height: 3000px;
+  background-image: url('../../../assets/sprites/map/test.jpg');
+  background-size: cover;
+  transition: transform 0.1s linear;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}

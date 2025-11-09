@@ -14,9 +14,10 @@ export const Attributes = {
     createCloseButton();
     
     createSideMenu();
-    Attributes.section.appendChild(Attributes.sideMenu);
-
+    
     createContent();
+    
+    Attributes.section.appendChild(Attributes.sideMenu);
     Attributes.section.appendChild(Attributes.content);
 
     return Attributes.section;
@@ -54,6 +55,7 @@ function createAttributeDiv(key, attr) {
     maxValue: playerdata.xpToUp,
     showText: true
   });
+  progressBar.listenToState(`player.attributes.${key}.${attr}.current`)
   const attributeDiv = progressBar.render();
   const label = attributeDiv.querySelector("span");
   attributeDiv.addEventListener("mouseenter", () => {

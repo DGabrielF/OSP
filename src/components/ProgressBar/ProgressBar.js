@@ -1,3 +1,5 @@
+import { State } from "../../scripts/state.js";
+
 export class ProgressBar {
   constructor({value, maxValue, showText}) {
     this.#validateParameters(value, maxValue, showText);
@@ -19,28 +21,52 @@ export class ProgressBar {
     this.container.appendChild(this.bar);
 
 
-    this.update(this.value, this.maxValue);
+    this.update(this.value ?? 0, this.maxValue ?? 1);
 
     return this.container;
   }
 
   update(newValue, newMaxValue) {
-    if (newMaxValue && newMaxValue !== this.maxValue) this.maxValue = newMaxValue;
+    if (typeof newMaxValue === "number" && newMaxValue > 0) this.maxValue = newMaxValue;
     
-    this.value = newValue;
+    const safeValue = (typeof newValue === "number") ? newValue : Number(newValue);
+    this.value = Number.isFinite(safeValue) ? safeValue : 0;
 
-    const percentage = Math.floor((this.value / this.maxValue) * 100);
+    const safeMax = (typeof this.maxValue === "number" && this.maxValue > 0) ? this.maxValue : 1;
+
+    let percentage = Math.floor((this.value / safeMax) * 100);
+    percentage = Math.max(0, Math.min(percentage, 100));
     const percentageString = `${percentage}%`
 
-    if (percentage <= 100) {
-      this.bar.style.width = percentageString;
-    } else {
-      this.bar.style.width = "100%";
-      throw new Error("'currentValue' não pode ser maior que 'maxValue'.");
-    }
+    if (this.bar) this.bar.style.width = percentageString;
 
     if (this.showText) {
       this.label.textContent = percentageString;
+    }
+  }
+
+  listenToState(pathCurrent, opts = {}) {
+    if (this._unsubscribe) this._unsubscribe();
+
+    const pathMax = opts.pathMax ?? (pathCurrent.endsWith(".current") ? pathCurrent.replace(/\.current$/, ".max") : opts.pathMax);
+
+    const handler = (newValue) => {
+      let max = (pathMax) ? (State.get ? State.get(pathMax) : undefined) : undefined;
+      if (max == null && this.maxValue != null) max = this.maxValue;
+      this.update(newValue, max);
+    };
+
+    this._unsubscribe = State.subscribe(pathCurrent, handler);
+
+    const initialValue = (State.get) ? State.get(pathCurrent) : undefined;
+    const initialMax = (pathMax && State.get) ? State.get(pathMax) : undefined;
+    if (initialValue !== undefined) this.update(initialValue, initialMax);
+  }
+
+  detach() {
+    if (this._unsubscribe) {
+      try { this._unsubscribe(); } catch (e) { /* ignore */ }
+      this._unsubscribe = null;
     }
   }
 
@@ -49,7 +75,6 @@ export class ProgressBar {
     if (className) element.classList.add(className);
     return element;
   }
-
 
   #validateParameters(currentValue, maxValue, showValue) {
   if (typeof currentValue !== "number" || currentValue < 0) {

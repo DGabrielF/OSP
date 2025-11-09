@@ -1183,4 +1183,8 @@ export const skills = {
     stamina: 0,
     mana: 0
   },
-}; 
+};
+
+skills.duration = (level, skillLevel, base) => {
+  return level * skillLevel + base;
+}

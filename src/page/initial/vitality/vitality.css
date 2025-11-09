@@ -1,0 +1,31 @@
+.vitaliity {
+  width: 150px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.vitaliity .progress_container {
+  width: 150px;
+  height: 10px;
+  background-color: #00000055;
+}
+
+.vitaliity .hp-bar .progress_bar{
+  background-color: #dd0000;
+  border: 1px solid #0002;
+}
+
+.vitaliity .sp-bar .progress_bar{
+  background-color: #dddd00;
+  border: 1px solid #0002;
+}
+
+.vitaliity .mp-bar .progress_bar{
+  background-color: #0000dd;
+  border: 1px solid #0002;
+}
+.vitaliity .ep-bar .progress_bar{
+  background-color: #00dd00;
+  border: 1px solid #0002;
+}

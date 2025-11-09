@@ -1,14 +1,52 @@
-export const State = {
+import { Reactive } from "./core/utils/reactive.js"
+
+const initialState = {
+  ui: {
+    currentScreen: "login",
+    loading: false,
+  },
+  network: {
+    connectionStatus: "disconnected",
+    selectedServer: null,
+  },
+  account: null,
   player: {
-    id: "p00tester1OtherSideGame",
-    configs: {},
+    id: null,
+    configs: {
+      hotkeys: {
+        sets: {
+          "set-1": "e",
+          "set-2": "r",
+          "set-3": "t",
+        },
+        slots: {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+        },
+        menu: {
+          "backpack": "b",
+          "attributes": "a",
+          "skills": "k",
+          "missions": "m",
+          "bestiary": "y",
+          "events": "v",
+          "friends": "f",
+          "guild": "g",
+          "organizations": "o",
+        }
+      }
+    },
     flags: {
       lastUpdate: Date.now(),
       online: true,
     },
     personal: {
       gender: "m",
-      name: "Dexter",
+      name: "Usuário",
     },
     experience: {
       level: 1,
@@ -370,7 +408,7 @@ export const State = {
         },
         mana: {
           max: null,
-          current: null,
+          current: 60,
           regenRate: {
             health: 0.7,
             stamina: 0.2
@@ -552,6 +590,82 @@ export const State = {
       },
     },
     achievementes: {},
+    skills: [
+      {
+        id: "firfireprojatt001",
+        level: 1,
+        currentXP: 0,
+        mastery: 0,
+        cooldown: 0,
+      }
+    ],
+    hotkeys: {
+      "set-1": {
+        "1": {
+          equiped: "firfireprojatt001"
+        },
+        "2": {
+          equiped: "rasengan"
+        },
+        "3": {
+          equiped: "kushiose no jutsu"
+        },
+        "4": {
+          equiped: "kage bunshin no jutsu"
+        },
+        "5": {
+          equiped: null
+        },
+        "6": {
+          equiped: null
+        },
+      },
+      "set-2": {
+        "1": {          
+          equiped: "katon goukakyuu no jutsu"
+        },
+        "2": {
+          equiped: "chidori"
+        },
+        "3": {
+          equiped: "sharingan"
+        },
+        "4": {
+          equiped: null
+        },
+        "5": {
+          equiped: null
+        },
+        "6": {
+          equiped: null
+        },
+      },
+      "set-3": {
+        "1": {
+          equiped: "kayoken"
+        },
+        "2": {
+          equiped: "kamehame ha"
+        },
+        "3": {
+          equiped: "genki dama"
+        },
+        "4": {
+          equiped: null
+        },
+        "5": {
+          equiped: null
+        },
+        "6": {
+          equiped: null
+        },
+      },
+    }
   },
-  configs: null
+  world: {
+    time: "day",
+    weather: "clear",
+  }
 }
+
+export const State = Reactive.create(initialState);

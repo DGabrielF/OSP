@@ -65,3 +65,10 @@ notifications/
 
 market/
   └── notificationId [ ]
+
+1 - sistema de combate
+2 - sistema de evolução
+3 - sistema de drop/coleta
+4 - sistema de NPC
+5 - sistema de missões
+6 - modo multiplayer (ai lasco)

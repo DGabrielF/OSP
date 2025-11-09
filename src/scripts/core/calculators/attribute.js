@@ -65,6 +65,7 @@ attribute.update = () => {
         const resultAtt = calculateRealAttribute(dependencies);
         if (dependencies.max) {
           State.player.attributes[attr][key].max = resultAtt;
+          State.player.attributes[attr][key].current = State.player.attributes[attr][key].current ? State.player.attributes[attr][key].current : State.player.attributes[attr][key].max;
         } else {
           State.player.attributes[attr][key] = resultAtt;
         }

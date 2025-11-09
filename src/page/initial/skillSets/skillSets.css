@@ -7,3 +7,7 @@
 .skill-set .slot {
   border-radius: 15px;
 }
+
+.skill-set .slot:disabled {
+  outline: 2px solid red;
+}

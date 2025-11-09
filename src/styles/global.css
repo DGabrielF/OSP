@@ -1,14 +1,19 @@
 @import url("../page/quiz/Form.css");
 
+/* Gameplay */
 @import url("../page/initial/menu/menu.css");
 @import url("../page/initial/profile/profile.css");
 @import url("../page/initial/hotkeys/hotkeys.css");
 @import url("../page/initial/skillSets/skillSets.css");
+@import url("../page/initial/vitality/vitality.css");
 @import url("../page/initial/initial.css");
+@import url("../page/initial/map/map.css");
+@import url("../page/initial/player/player.css");
 
-
+/* pages */
 @import url("../page/equipments/equipment.css");
 @import url("../page/attributes/attributes.css");
+@import url("../page/skills/skills.css");
 
 /* classes */
 @import url("./colors.css");
@@ -33,7 +38,6 @@
 }
 
 #game-display {
-  background-color: white;
   position: relative;
 }
 
@@ -61,4 +65,13 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.creature-sprite {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: green;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
 }
